@@ -1,3 +1,8 @@
+"""
+Extremely simple implementation of Tic Tac Toe for two players, named Jaber and Salah.
+This implementation treats the board as a 1D array with 9 values, each value represnet a cell in the board, numbering strating from the top left to the bottom right
+"""
+
 class Board:
     def __init__(self):
         self.s = list(range(1,10))
@@ -6,9 +11,9 @@ class Board:
         return f"\n{self.s[0]}|{self.s[1]}|{self.s[2]}\n{self.s[3]}|{self.s[4]}|{self.s[5]}\n{self.s[6]}|{self.s[7]}|{self.s[8]}\n"
 
     def check(self):
-        win_pattern = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
+        WIN_PATTERNS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
 
-        for i in win_pattern:
+        for i in WIN_PATTERNS:
             if self.s[i[0]] == self.s[i[1]] == self.s[i[2]]:
                 return True
         return False
@@ -17,7 +22,7 @@ board = Board()
 print(board)
 
 # our players in list of lists
-players = [['jaber','X'], ['salah','O']]
+players = [['Jaber','X'], ['Salah','O']]
 
 pl_i = 1 # player index
 played_squares = [] # to keep a track of the places that were played
